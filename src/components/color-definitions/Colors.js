@@ -1,0 +1,1 @@
+Meaning of the color personalities go in here
