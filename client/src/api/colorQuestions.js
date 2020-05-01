@@ -1,4 +1,4 @@
-var questionAnswers = [
+var colorQuestions = [
     {
         question: 'Others frustrate me when they are...',
         answers: [
@@ -331,4 +331,4 @@ var questionAnswers = [
     },
 ]
 
-export default questionAnswers;
+export default colorQuestions;
