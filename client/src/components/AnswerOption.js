@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function AnswerChoice(props) {
+
+function AnswerOption(props) {
     return (
-        <li className="answerChoice">
+        <li className="answerOption">
             <input
                 type="radio"
                 checked={props.answerType === props.answer}
@@ -12,7 +13,8 @@ function AnswerChoice(props) {
                 disabled={props.answer}
                 onChange={props.onAnswerSelected}
             />
-            <label htmlFor={props.answerType}>
+
+            <label className="radioCustomLabel" htmlFor={props.answerType}>
                 {props.answerContent}
             </label>
 
@@ -20,7 +22,7 @@ function AnswerChoice(props) {
     );
 }
 
-AnswerChoice.propTypes = {
+AnswerOption.propTypes = {
     answerType: PropTypes.string.isRequired,
     answerContent: PropTypes.string.isRequired,
     answer: PropTypes.string.isRequired,
@@ -28,4 +30,4 @@ AnswerChoice.propTypes = {
 
 };
 
-export default AnswerChoice;
+export default AnswerOption;

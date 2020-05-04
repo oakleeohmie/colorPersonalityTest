@@ -1,14 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Question from '../components/Question';
-import AnswerChoice from '../components/AnswerChoice';
-
+import AnswerOption from '../components/AnswerOption';
 
 function Quiz(props) {
 
-    function renderAnswerChoices(key) {
+    function renderAnswerOptions(key) {
         return (
-            <AnswerChoice
+            <AnswerOption
                 key={key.content}
                 answerContent={key.content}
                 answerType={key.type}
@@ -19,20 +18,21 @@ function Quiz(props) {
 
         );
     }
-    return (
 
+
+    return (
         <div key={props.questionId}>
             <Question content={props.question} />
-            <ul>
-                {props.answerChoices.map(renderAnswerChoices)}
+            <ul className="answerOptions">
+                {props.answerOptions.map(renderAnswerOptions)}
             </ul>
         </div>
-
     );
-}
+};
+
 Quiz.propTypes = {
     answer: PropTypes.string.isRequired,
-    answerChoices: PropTypes.array.isRequired,
+    answerOptions: PropTypes.array.isRequired,
     counter: PropTypes.number.isRequired,
     question: PropTypes.string.isRequired,
     questionId: PropTypes.number.isRequired,
