@@ -9,15 +9,16 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      counter: 0,
       questionId: 1,
       question: '',
       answerOptions: [],
       answer: '',
       answersCount: {
-        red: 0,
-        green: 0,
-        yellow: 0,
         blue: 0,
+        yellow: 0,
+        green: 0,
+        red: 0,
       },
       result: ''
     };
@@ -93,7 +94,7 @@ class App extends Component {
     if (result.length === 1) {
       this.setState({ result: result[0] });
     } else {
-      this.setState({ result: 'Undetermined' });
+      this.setState({ result: 'undetermined' });
     }
   }
 
