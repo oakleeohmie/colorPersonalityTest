@@ -329,6 +329,50 @@ var colorQuestions = [
 
         ]
     },
+    {
+        question: 'A career I would enjoy would be a...',
+        answers: [
+            {
+                type: 'blue',
+                content: 'Lawyer'
+            },
+            {
+                type: 'red',
+                content: 'CEO'
+            },
+            {
+                type: 'green',
+                content: 'Teacher'
+            },
+            {
+                type: 'yellow',
+                content: 'Musician/Artist'
+            }
+
+        ]
+    },
+    {
+        question: 'Do you consider yourself to be...',
+        answers: [
+            {
+                type: 'blue',
+                content: 'Introvert'
+            },
+            {
+                type: 'red',
+                content: 'Mostly extrovert'
+            },
+            {
+                type: 'green',
+                content: 'Mostly introvert'
+            },
+            {
+                type: 'yellow',
+                content: 'Extrovert'
+            }
+
+        ]
+    },
 ]
 
 export default colorQuestions;
