@@ -23,3 +23,23 @@ margin-top: 1em;
 .color-def {
   margin-top: 2em;
 }
+.customChoice {
+  display: block;
+ background-color: rgba(0, 0, 0, 0.658);
+ color: white;
+ border-radius: 25px;
+    border: 2px solid;
+   width: 200px; 
+}
+input[type=radio]{
+  position: absolute;
+  visibility: hidden;
+}
+label {
+padding: 10px 10px 10px 10px;
+  margin: auto;
+  position: relative;
+  font-size: 1em;
+  cursor: pointer;
+
+}

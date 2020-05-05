@@ -14,7 +14,7 @@ function AnswerOption(props) {
                 onChange={props.onAnswerSelected}
             />
 
-            <label className="radioCustomLabel" htmlFor={props.answerType}>
+            <label className="customChoice" htmlFor={props.answerType}>
                 {props.answerContent}
             </label>
 
