@@ -97,7 +97,7 @@ class App extends Component {
     if (result.length === 1) {
       this.setState({ result: result[0] });
     } else {
-      this.setState({ result: 'undetermined' });
+      this.setState({ result: 'more than one color' });
     }
   }
 
@@ -125,7 +125,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h2 className="title">Color Personality Quiz</h2>
+
         <div className="App">
           {this.state.result ? this.renderResult() : this.renderQuiz()}
         </div>
