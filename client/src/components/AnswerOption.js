@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 function AnswerOption(props) {
     return (
-        <li className="answerOption">
+        <div className="answerOption">
             <input
                 type="radio"
                 checked={props.answerType === props.answer}
@@ -18,7 +18,7 @@ function AnswerOption(props) {
                 {props.answerContent}
             </label>
 
-        </li>
+        </div>
     );
 }
 

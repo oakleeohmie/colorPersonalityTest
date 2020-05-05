@@ -5,6 +5,8 @@ import Quiz from './components/Quiz';
 import Result from './components/Result';
 import './App.css';
 
+
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -100,14 +102,16 @@ class App extends Component {
 
   renderQuiz() {
     return (
-      <Quiz
-        answer={this.state.answer}
-        answerOptions={this.state.answerOptions}
-        questionId={this.state.questionId}
-        question={this.state.question}
-        questionTotal={colorQuestions.length}
-        onAnswerSelected={this.handleAnswerSelected}
-      />
+      <div>
+        <Quiz
+          answer={this.state.answer}
+          answerOptions={this.state.answerOptions}
+          questionId={this.state.questionId}
+          question={this.state.question}
+          questionTotal={colorQuestions.length}
+          onAnswerSelected={this.handleAnswerSelected}
+        />
+      </div>
     );
   }
 
@@ -119,8 +123,11 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        {this.state.result ? this.renderResult() : this.renderQuiz()}
+      <div>
+        <h2 className="title">Color Personality Quiz</h2>
+        <div className="App">
+          {this.state.result ? this.renderResult() : this.renderQuiz()}
+        </div>
       </div>
     );
   }

@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-
 function Result(props) {
     return (
         <div>
-            You are <strong>{props.quizResult}</strong>!
+            <div>
+                You are <strong>{props.quizResult}</strong>!
 			</div>
-
+        </div >
     );
+
 }
 
 Result.propTypes = {
