@@ -17,73 +17,73 @@ import Container from '@material-ui/core/Container';
 import "./style.css"
 
 
-// class Login extends Component {
-//     // Setting the component's initial state
-//     state = {
-//         password: "",
-//         email: "",
-//         name: ""
-//     };
+class Login extends Component {
+    // Setting the component's initial state
+    state = {
+        password: "",
+        email: "",
+        name: ""
+    };
 
-//     handleInputChange = event => {
-//         // Getting the value and name of the input which triggered the change
-//         let value = event.target.value;
-//         const name = event.target.name;
-
-
-//         // Updating the input's state
-//         this.setState({
-//             [name]: value
-//         });
-//     };
-
-//     handleFormSubmit = event => {
-
-//         // Preventing the default behavior of the form submit (which is to refresh the page)
-//         event.preventDefault();
-//         console.log(this.state)
+    handleInputChange = event => {
+        // Getting the value and name of the input which triggered the change
+        let value = event.target.value;
+        const name = event.target.name;
 
 
-//         // axios call or create all the API call in a utils folder call to create the user in the db
-//         axios.post("/api/login", this.state).then(result => {
-//             console.log(result);
-//             this.setState({ name: result.data.firstName + " " + result.data.lastName })
-//             //  this.setState({
-//             //     password: "",
-//             //     email: ""
-//             // });
-//         })
-//     };
-//     render() {
-//         // Notice how each input has a `value`, `name`, and `onChange` prop
-//         return (
-//             <div>
-//                 {!this.state.name ? (
-//                     <form className="form">
+        // Updating the input's state
+        this.setState({
+            [name]: value
+        });
+    };
 
-//                         <input
-//                             value={this.state.email}
-//                             name="email"
-//                             onChange={this.handleInputChange}
-//                             type="email"
-//                             placeholder="Email"
-//                         />
-//                         <input
-//                             value={this.state.password}
-//                             name="password"
-//                             onChange={this.handleInputChange}
-//                             type="password"
-//                             placeholder="Password"
-//                         />
+    handleFormSubmit = event => {
 
-//                         <button onClick={this.handleFormSubmit}>Submit</button>
-//                     </form>
-//                 ) : (<h1> Welcome {this.state.name}</h1>)
-//                 }
-//             </div>
-//         );
-//     }
-// }
+        // Preventing the default behavior of the form submit (which is to refresh the page)
+        event.preventDefault();
+        console.log(this.state)
+
+
+        // axios call or create all the API call in a utils folder call to create the user in the db
+        axios.post("/api/login", this.state).then(result => {
+            console.log(result);
+            this.setState({ name: result.data.firstName + " " + result.data.lastName })
+            //  this.setState({
+            //     password: "",
+            //     email: ""
+            // });
+        })
+    };
+    render() {
+        // Notice how each input has a `value`, `name`, and `onChange` prop
+        return (
+            <div>
+                {!this.state.name ? (
+                    <form className="form">
+
+                        <input
+                            value={this.state.email}
+                            name="email"
+                            onChange={this.handleInputChange}
+                            type="email"
+                            placeholder="Email"
+                        />
+                        <input
+                            value={this.state.password}
+                            name="password"
+                            onChange={this.handleInputChange}
+                            type="password"
+                            placeholder="Password"
+                        />
+
+                        <button onClick={this.handleFormSubmit}>Submit</button>
+                    </form>
+                ) : (<h1> Welcome {this.state.name}</h1>)
+                }
+            </div>
+        );
+    }
+}
 
 import React from 'react';
 import Avatar from '@material-ui/core/Avatar';
