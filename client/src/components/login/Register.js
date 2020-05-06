@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import axios from "axios";
-import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
@@ -30,10 +29,7 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'column',
         alignItems: 'center',
     },
-    avatar: {
-        margin: theme.spacing(1),
-        backgroundColor: theme.palette.secondary.main,
-    },
+
     form: {
         width: '100%', // Fix IE 11 issue.
         marginTop: theme.spacing(3),

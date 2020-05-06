@@ -1,35 +1,40 @@
 import React, { Component } from 'react'
-import Intro from './components/Intro'
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import EntireQuiz from './components/EntireQuiz';
+import Login from './components/login/Login';
+import Register from './components/login/Register'
+import BlueDef from './components/definitions/BlueDef'
+import RedDef from './components/definitions/RedDef'
+import YellowDef from './components/definitions/YellowDef'
+import GreenDef from './components/definitions/GreenDef.js'
+import MoreOneDef from './components/definitions/MoreOneDef'
+
 
 class App extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      showEntireQuiz: false
+
     }
-    this._onStartClick = this._onStartClick.bind(this)
-  }
-
-  renderIntro() {
-    return <Intro _onStartClick={this._onStartClick} />
-  }
-
-  renderEntireQuiz() {
-    return <EntireQuiz />
   }
 
   render() {
-    let showEntireQuiz = this.state.showEntireQuiz
-    if (showEntireQuiz) {
-      return this.renderEntireQuiz()
-    }
-    return this.renderIntro()
-  }
+    return (
+      <div >
 
-  _onStartClick() {
-    this.animateOut()
-    setTimeout(() => this.setState({ showEntireQuiz: !this.state.showEntireQuiz }), 1000)
+        <Route exact path='/' component={Login} />
+        <Route exact path='/register' component={Register} />
+        <Route exact path='/quiz' component={EntireQuiz} />
+        <Route exact path='/blue' component={BlueDef} />
+        <Route exact path='/red' component={RedDef} />
+        <Route exact path='/yellow' component={YellowDef} />
+        <Route exact path='/green' component={GreenDef} />
+        <Route exact path='/more' component={MoreOneDef} />
+
+      </div>
+
+    )
   }
 }
+
 export default App;
