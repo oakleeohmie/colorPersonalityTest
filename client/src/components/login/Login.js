@@ -11,6 +11,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import axios from "axios";
+import './Login.css';
 
 function Copyright() {
     return (
@@ -69,12 +70,12 @@ const Login = () => {
 
     return (
         <div>
-            <Container component="main" maxWidth="xs" style={{ backgroundColor: `white` }}>
+            <Container className="signIn" component="main" maxWidth="xs">
                 <CssBaseline />
                 <div className={classes.paper}>
-                    <Typography component="h1" variant="h5">
+                    <h1 className="signInTitle" component="h1" variant="h5">
                         Sign in
-                </Typography>
+                </h1>
                     <form className={classes.form} noValidate>
                         <TextField
                             variant="outlined"
@@ -102,7 +103,7 @@ const Login = () => {
                             type="submit"
                             fullWidth
                             variant="contained"
-                            color="primary"
+                            color=""
                             className={classes.submit}
                         >
                             Sign In
