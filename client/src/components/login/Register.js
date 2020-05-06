@@ -139,7 +139,7 @@ const SignUp = () => {
             </Button>
                     <Grid container justify="flex-end">
                         <Grid item>
-                            <Link href="/" variant="body2">
+                            <Link href="/" variant="body2" style={{ color: 'black' }} >
                                 Already have an account? Sign in
                 </Link>
                         </Grid>
@@ -149,7 +149,7 @@ const SignUp = () => {
             <Box mt={5}>
                 <Copyright />
             </Box>
-        </Container>
+        </Container >
     );
 }
 export default SignUp;
