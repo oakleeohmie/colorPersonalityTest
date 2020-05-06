@@ -99,7 +99,7 @@ const Login = () => {
                             id="password"
                             autoComplete="current-password"
                         />
-                        <Button onClick={e => { e.preventDefault(); window.location.href = '/quiz' }}
+                        <Button onClick={e => { e.preventDefault(); window.location.href = '/welcome' }}
                             type="submit"
                             fullWidth
                             variant="contained"
