@@ -2,11 +2,12 @@ import React, { Component } from 'react'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import EntireQuiz from './components/EntireQuiz';
 import Login from './components/login/Login';
-import Register from './components/login/Register'
-import BlueDef from './components/definitions/BlueDef'
-import RedDef from './components/definitions/RedDef'
-import YellowDef from './components/definitions/YellowDef'
-import GreenDef from './components/definitions/GreenDef.js'
+import Register from './components/login/Register';
+import Welcome from './welcome/Welcome';
+import BlueDef from './components/definitions/BlueDef';
+import RedDef from './components/definitions/RedDef';
+import YellowDef from './components/definitions/YellowDef';
+import GreenDef from './components/definitions/GreenDef.js';
 import MoreOneDef from './components/definitions/MoreOneDef'
 
 
@@ -24,6 +25,7 @@ class App extends Component {
 
         <Route exact path='/' component={Login} />
         <Route exact path='/register' component={Register} />
+        <Route exact path='/welcome' component={Welcome} />
         <Route exact path='/quiz' component={EntireQuiz} />
         <Route exact path='/blue' component={BlueDef} />
         <Route exact path='/red' component={RedDef} />
