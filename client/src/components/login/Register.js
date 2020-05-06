@@ -11,6 +11,8 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import './Register.css';
+
 function Copyright() {
     return (
         <Typography variant="body2" color="textSecondary" align="center">
@@ -69,12 +71,13 @@ const SignUp = () => {
         })
     }
     return (
-        <Container component="main" maxWidth="xs" style={{ backgroundColor: `white` }}>
+        <Container className="register" component="main" maxWidth="xs">
             <CssBaseline />
             <div className={classes.paper}>
-                <Typography component="h1" variant="h5">
+
+                <h1 className="registerTitle" component="h1" variant="h5">
                     Sign up
-          </Typography>
+          </h1>
                 <form className={classes.form} noValidate>
                     <Grid container spacing={2}>
                         <Grid item xs={12} sm={6}>
@@ -130,7 +133,6 @@ const SignUp = () => {
                         type="submit"
                         fullWidth
                         variant="contained"
-                        color="primary"
                         className={classes.submit}
                     >
                         Sign Up
