@@ -1,5 +1,5 @@
+
 import React from 'react';
-import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
@@ -11,27 +11,26 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import axios from "axios";
+
 function Copyright() {
     return (
         <Typography variant="body2" color="textSecondary" align="center">
             {'Copyright © '}
             <Link color="inherit" href="https://material-ui.com/">
+
             </Link>{' '}
             {new Date().getFullYear()}
             {'.'}
         </Typography>
     );
 }
+
 const useStyles = makeStyles((theme) => ({
     paper: {
         marginTop: theme.spacing(8),
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-    },
-    avatar: {
-        margin: theme.spacing(1),
-        backgroundColor: theme.palette.secondary.main,
     },
     form: {
         width: '100%',
@@ -41,6 +40,7 @@ const useStyles = makeStyles((theme) => ({
         margin: theme.spacing(3, 0, 2),
     },
 }));
+
 const Login = () => {
     const classes = useStyles();
     const [name, setName] = React.useState('')
@@ -52,9 +52,11 @@ const Login = () => {
         setValue(event.target.value);
         setName(event.target.name);
     }
+
     const handleFormSubmit = async event => {
         event.preventDefault();
         console.log(name, value)
+
         await axios.post('/api/login', { name, value }).then(result => {
             console.log(result);
             setName(`${result.data.firstName} ${result.data.lastName}`);
@@ -63,6 +65,8 @@ const Login = () => {
             window.location.href = '/quiz'
         })
     }
+
+
     return (
         <div>
             <Container component="main" maxWidth="xs" style={{ backgroundColor: `white` }}>
@@ -105,6 +109,7 @@ const Login = () => {
                     </Button>
                         <Grid container>
                             <Grid item xs>
+
                             </Grid>
                             <Grid item>
                                 <Link href="/register" variant="body2">
@@ -121,3 +126,5 @@ const Login = () => {
         </div>
     );
 }
+
+export default Login;
