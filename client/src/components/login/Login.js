@@ -113,7 +113,7 @@ const Login = () => {
 
                             </Grid>
                             <Grid item>
-                                <Link href="/register" variant="body2">
+                                <Link href="/register" variant="body2" style={{ color: 'black' }}>
                                     {"Don't have an account? Sign Up"}
                                 </Link>
                             </Grid>
