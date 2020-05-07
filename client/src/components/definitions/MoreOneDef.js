@@ -1,10 +1,10 @@
 import React from 'react';
-
+import './MoreOneDef.css'
 function MoreDef() {
     return (
         <div className="moreSummary">
-            <h2>So you're more than one color...</h2>
-            <p>You broke our quiz! Just kidding. But unfortunately our quiz isn't accurate enough to decipher between somebody's personality that resonates with more than one color. Come back later and try again!</p>
+            <h2 className="moreTitle">Well this is awkward...</h2>
+            <p>We know this is lame, but unfortunately our quiz isn't accurate enough to decipher between somebody's personality that resonates with more than one color. Come back later and try again!</p>
         </div >
     );
 }
