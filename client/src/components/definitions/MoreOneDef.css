@@ -1,0 +1,19 @@
+.moreSummary {
+    background-color:white;
+    display: block;
+    border-radius: 25px;
+    border: 10px grey solid;
+   opacity: .95;
+   padding-top: 1em;
+  margin-top: 4em;
+  margin-left: 2em;
+  margin-right: 2em;
+  text-align: center;
+
+}
+.moreTitle {
+    font-family: 'Amatic SC', cursive;
+    font-size: 80px;
+    margin-top: 1em;
+    margin-bottom: .5em;
+}

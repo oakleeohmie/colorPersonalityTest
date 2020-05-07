@@ -6,7 +6,7 @@ function Result(props) {
     return (
         <div>
             <div >
-                <h1 className="quizResult">You are <strong>{props.quizResult}</strong>! </h1>
+                <h1 className="quizResult">You are {props.quizResult}! </h1>
                 <h6 className="clickDef"> What does being {props.quizResult} mean? Click below!</h6>
             </div>
             <div className="color-def">

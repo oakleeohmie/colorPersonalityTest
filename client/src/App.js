@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import EntireQuiz from './components/EntireQuiz';
 import Login from './components/login/Login';
 import Register from './components/login/Register';
-import Welcome from './welcome/Welcome';
+import Welcome from './components/welcome/Welcome';
 import BlueDef from './components/definitions/BlueDef';
 import RedDef from './components/definitions/RedDef';
 import YellowDef from './components/definitions/YellowDef';
