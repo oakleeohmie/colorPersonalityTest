@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
 import './Welcome.css';
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 
 function Welcome() {
     return (
@@ -13,8 +14,8 @@ function Welcome() {
                     color="inherit"
                     size="large"
                 >
-                    START
-            </Button>
+                    START <ArrowForwardIcon />
+                </Button>
             </div>
         </div >
     );

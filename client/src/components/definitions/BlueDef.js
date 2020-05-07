@@ -1,5 +1,7 @@
 import React from 'react';
 import './BlueDef.css';
+import Button from '@material-ui/core/Button';
+import LoopIcon from '@material-ui/icons/Loop';
 
 function BlueDef() {
     return (
@@ -10,6 +12,13 @@ function BlueDef() {
                 Blues can be self-righteous and insecure and can also be very self-disciplined and sincere. Blues are steady, ordered and enduring.
                 Blues love with passion. They bring culture and dependency to society and home. They are highly committed and loyal.
             They are comfortable in creative environments. They strive to be the best they can be.</p>
+            <Button onClick={e => { e.preventDefault(); window.location.href = '/quiz' }}
+                variant="contained"
+                color="inherit"
+                size="large"
+            >
+                TAKE AGAIN  <LoopIcon />
+            </Button>
         </div >
     );
 }
