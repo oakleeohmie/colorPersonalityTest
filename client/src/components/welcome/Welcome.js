@@ -5,13 +5,17 @@ import './Welcome.css';
 function Welcome() {
     return (
         <div className="welcome">
-            <h2>Color Personality Quiz</h2>
-            <p>This is a color personality quiz. Answer honestly.  </p>
-            <Button onClick={e => { e.preventDefault(); window.location.href = '/quiz' }}
-
-            >
-                START QUIZ
+            <h2 className="title" >Color Personality Quiz</h2>
+            <p className="description">Answer honestly.  </p>
+            <div className="startButton">
+                <Button onClick={e => { e.preventDefault(); window.location.href = '/quiz' }}
+                    variant="contained"
+                    color="inherit"
+                    size="large"
+                >
+                    START
             </Button>
+            </div>
         </div >
     );
 }
