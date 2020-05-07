@@ -7,7 +7,7 @@ function Welcome() {
     return (
         <div className="welcome">
             <h2 className="title" >Color Personality Quiz</h2>
-            <p className="description">Answer honestly.  </p>
+            <p className="description">Answer honestly.</p>
             <div className="startButton">
                 <Button onClick={e => { e.preventDefault(); window.location.href = '/quiz' }}
                     variant="contained"

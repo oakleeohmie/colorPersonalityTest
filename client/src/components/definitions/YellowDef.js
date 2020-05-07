@@ -8,14 +8,16 @@ function YellowDef() {
         <div className="yellowSummary">
             <h2 className="yellowTitle">You're not so mellow, yellow!</h2>
             <p className="yelloweDescription">Yellows are motivated by fun. They are here to have a great time. They are known for being spontaneous, optimistic, and sometimes self-centered. Yellows are enthusiastic. They are very persuasive. They are spontaneous in nature. They are always looking for something new to do.</p>
-            <Button onClick={e => { e.preventDefault(); window.location.href = '/quiz' }}
-                variant="contained"
-                color="inherit"
-                size="large"
-            >
+            <div className="takeAgainButton">
+                <Button onClick={e => { e.preventDefault(); window.location.href = '/quiz' }}
+                    variant="contained"
+                    color="inherit"
+                    size="large"
+                >
 
-                TAKE AGAIN  <LoopIcon />
-            </Button>
+                    TAKE AGAIN  <LoopIcon />
+                </Button>
+            </div>
         </div >
     );
 }
