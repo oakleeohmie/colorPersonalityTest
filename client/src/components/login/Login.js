@@ -1,30 +1,39 @@
+// import React, { Component } from "react";
+// import axios from "axios";
+// import React from 'react';
+// import Avatar from '@material-ui/core/Avatar';
+// import Button from '@material-ui/core/Button';
+// import CssBaseline from '@material-ui/core/CssBaseline';
+// import TextField from '@material-ui/core/TextField';
+// import FormControlLabel from '@material-ui/core/FormControlLabel';
+// import Checkbox from '@material-ui/core/Checkbox';
+// import Link from '@material-ui/core/Link';
+// import Grid from '@material-ui/core/Grid';
+// import Box from '@material-ui/core/Box';
+// import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+// import Typography from '@material-ui/core/Typography';
+// import { makeStyles } from '@material-ui/core/styles';
+// import Container from '@material-ui/core/Container';
+// import "./style.css"
 
-import React from 'react';
+import React, { Component } from 'react';
+import axios from "axios";
+import Avatar from '@material-ui/core/Avatar';
+
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import axios from "axios";
-import './Login.css';
 
-function Copyright() {
-    return (
-        <Typography variant="body2" color="textSecondary" align="center">
-            {'Copyright © '}
-            <Link color="inherit" href="https://material-ui.com/">
 
-            </Link>{' '}
-            {new Date().getFullYear()}
-            {'.'}
-        </Typography>
-    );
-}
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -33,8 +42,13 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'column',
         alignItems: 'center',
     },
+    avatar: {
+        margin: theme.spacing(1),
+        backgroundColor: theme.palette.secondary.main,
+    },
     form: {
-        width: '100%',
+        width: '100%', // Fix IE 11 issue.
+
         marginTop: theme.spacing(1),
     },
     submit: {
@@ -42,40 +56,107 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const Login = () => {
-    const classes = useStyles();
-    const [name, setName] = React.useState('')
-    const [value, setValue] = React.useState('')
-    const [password, setPassword] = React.useState('')
-    const [email, setEmail] = React.useState('')
-    const handleInputchange = event => {
-        event.preventDefault();
-        setValue(event.target.value);
-        setName(event.target.name);
-    }
 
-    const handleFormSubmit = async event => {
-        event.preventDefault();
-        console.log(name, value)
+const classes = useStyles();
+class Login extends Component {
+    // Setting the component's initial state
+    state = {
+        password: "",
+        email: "",
+        name: ""
+    };
+l
+    handleInputChange = event => {
+        // Getting the value and name of the input which triggered the change
+        let value = event.target.value;
+        const name = event.target.name;
 
-        await axios.post('/api/login', { name, value }).then(result => {
+lll
+        // Updating the input's state
+        this.setState({
+            [name]: value
+        });
+    };
+
+    handleFormSubmit = event => {
+
+        // Preventing the default behavior of the form submit (which is to refresh the page)
+        event.preventDefault();
+        console.log(this.state)
+
+
+        // axios call or create all the API call in a utils folder call to create the user in the db
+        axios.post("/api/login", this.state).then(result => {
             console.log(result);
-            setName(`${result.data.firstName} ${result.data.lastName}`);
-            setPassword('')
-            setEmail('')
-            window.location.href = '/quiz'
+            this.setState({ name: result.data.firstName + " " + result.data.lastName })
+            //  this.setState({
+            //     password: "",
+            //     email: ""
+            // });
         })
+    };
+    //     render() {
+    //         // Notice how each input has a `value`, `name`, and `onChange` prop
+    //         return (
+    //             <div>
+    //                 {!this.state.name ? (
+    //                     <form className="form">
+
+    //                         <input
+    //                             value={this.state.email}
+    //                             name="email"
+    //                             onChange={this.handleInputChange}
+    //                             type="email"
+    //                             placeholder="Email"
+    //                         />
+    //                         <input
+    //                             value={this.state.password}
+    //                             name="password"
+    //                             onChange={this.handleInputChange}
+    //                             type="password"
+    //                             placeholder="Password"
+    //                         />
+
+    //                         <button onClick={this.handleFormSubmit}>Submit</button>
+    //                     </form>
+    //                 ) : (<h1> Welcome {this.state.name}</h1>)
+    //                 }
+    //             </div>
+    //         );
+    //     }
+    // }
+
+
+
+    Copyright = () => {
+        return (
+            <Typography variant="body2" color="textSecondary" align="center">
+                {'Copyright © '}
+                <Link color="inherit" href="https://material-ui.com/">
+                    Your Website
+      </Link>{' '}
+                {new Date().getFullYear()}
+                {'.'}
+            </Typography>
+        );
     }
 
 
-    return (
-        <div>
-            <Container className="signIn" component="main" maxWidth="xs">
+
+    render() {
+
+
+        return (
+            <Container component="main" maxWidth="xs">
                 <CssBaseline />
                 <div className={classes.paper}>
-                    <h1 className="signInTitle" component="h1" variant="h5">
+                    <Avatar className={classes.avatar}>
+                        <LockOutlinedIcon />
+                    </Avatar>
+                    <Typography component="h1" variant="h5">
                         Sign in
-                </h1>
+        </Typography>
+
                     <form className={classes.form} noValidate>
                         <TextField
                             variant="outlined"
@@ -87,6 +168,9 @@ const Login = () => {
                             name="email"
                             autoComplete="email"
                             autoFocus
+
+                            onChange={this.handleInputChange}
+
                         />
                         <TextField
                             variant="outlined"
@@ -98,34 +182,44 @@ const Login = () => {
                             type="password"
                             id="password"
                             autoComplete="current-password"
+                            onChange={this.handleInputChange}
                         />
-                        <Button onClick={e => { e.preventDefault(); window.location.href = '/welcome' }}
-                            type="submit"
+                        {/* <FormControlLabel
+                        control={<Checkbox value="remember" color="primary" />}
+                        label="Remember me" */}
+
+                        <Button
+
                             fullWidth
                             variant="contained"
-                            color=""
+                            color="primary"
                             className={classes.submit}
+                            onClick={this.handleFormSubmit}
                         >
                             Sign In
-                    </Button>
-                        <Grid container>
-                            <Grid item xs>
+          </Button>
+                        {/* <Grid container>
+                        <Grid item xs>
+                            <Link href="#" variant="body2">
+                                Forgot password?
+              </Link>
+                        </Grid> */}
+                        <Grid item>
+                            <Link href="#" variant="body2">
+                                {"Don't have an account? Sign Up"}
+                            </Link>
+                            {/* </Grid> */}
 
-                            </Grid>
-                            <Grid item>
-                                <Link href="/register" variant="body2" style={{ color: 'black' }}>
-                                    {"Don't have an account? Sign Up"}
-                                </Link>
-                            </Grid>
                         </Grid>
                     </form >
                 </div >
                 <Box mt={8}>
-                    <Copyright />
+
+                    <this.Copyright />
                 </Box>
             </Container >
-        </div>
-    );
+                            
+    }
 }
 
 export default Login;
