@@ -53,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-
+const classes = useStyles();
 class Login extends Component {
     // Setting the component's initial state
     state = {
@@ -61,33 +61,13 @@ class Login extends Component {
         email: "",
         name: ""
     };
-
-    classes = (theme) => makeStyles((theme) => ({
-        paper: {
-            marginTop: theme.spacing(8),
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-        },
-        avatar: {
-            margin: theme.spacing(1),
-            backgroundColor: theme.palette.secondary.main,
-        },
-        form: {
-            width: '100%', // Fix IE 11 issue.
-            marginTop: theme.spacing(1),
-        },
-        submit: {
-            margin: theme.spacing(3, 0, 2),
-        },
-    }));
-
+l
     handleInputChange = event => {
         // Getting the value and name of the input which triggered the change
         let value = event.target.value;
         const name = event.target.name;
 
-
+lll
         // Updating the input's state
         this.setState({
             [name]: value
@@ -165,14 +145,14 @@ class Login extends Component {
         return (
             <Container component="main" maxWidth="xs">
                 <CssBaseline />
-                <div className={this.classes.paper}>
-                    <Avatar className={this.classes.avatar}>
+                <div className={classes.paper}>
+                    <Avatar className={classes.avatar}>
                         <LockOutlinedIcon />
                     </Avatar>
                     <Typography component="h1" variant="h5">
                         Sign in
         </Typography>
-                    <form className={this.classes.form} noValidate>
+                    <form className={classes.form} noValidate>
                         <TextField
                             variant="outlined"
                             margin="normal"
@@ -206,7 +186,7 @@ class Login extends Component {
                             fullWidth
                             variant="contained"
                             color="primary"
-                            className={this.classes.submit}
+                            className={classes.submit}
                             onClick={this.handleFormSubmit}
                         >
                             Sign In
@@ -229,7 +209,7 @@ class Login extends Component {
                     <this.Copyright />
                 </Box>
             </Container >
-        );
+                            
     }
 }
 export default Login;
